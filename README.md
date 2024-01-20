@@ -15,6 +15,12 @@ As of now:
 - Can save
 - Can work with keyboards
 - Has a simple code editor
+- Can play your game
+
+  ![image](https://github.com/invpe/Kopico/assets/106522950/174b31ad-eafa-4c3a-9249-0866420c8375)
+
+
+
 
 Maybe-a-todo-list:
 
