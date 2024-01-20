@@ -40,9 +40,10 @@ void setup() {
   img.setTextColor(WHITE);
   img.setFreeFont(FMBO18);
   img.setTextDatum(CC_DATUM);
-  img.drawString("KOPICCO", (int)(img.width() / 2), (int)(img.height() / 2), 1);
+  img.drawString("KOPICO", (int)(img.width() / 2), (int)(img.height() / 2), 1);
   img.drawString("loading, please wait", (int)(img.width() / 2), (int)(img.height() / 2) + 20, 2);
   img.pushSprite(0, 0);
+  delay(2000);
 
   while (!SPIFFS.begin()) {
     SPIFFS.format();
@@ -69,7 +70,18 @@ void loop() {
   switch (m_eState) {
     case eStates::STATE_START:
       {
-        img.fillSprite(TFT_DARKGREY);
+
+        img.fillSprite(TFT_BLACK);
+        img.setTextDatum(CC_DATUM);
+        img.setTextColor(WHITE);
+        img.setFreeFont(FMBO18);
+        img.drawString("KOPICO", (int)(img.width() / 2), (int)(img.height() / 2), 1);
+        img.drawString("what next?", (int)(img.width() / 2), (int)(img.height() / 2) + 20, 2);
+
+        img.drawString("texture", (int)(img.width() / 2) - 100, (int)(img.height() - 10), 2);
+        img.drawString("code", (int)(img.width() / 2), (int)(img.height() - 10), 2);
+        img.drawString("flash", (int)(img.width() / 2) + 100, (int)(img.height() - 10), 2);
+
 
         if (M5.BtnB.isPressed()) {
           m_SimpleEditor.Load("/TEST.BAS");
